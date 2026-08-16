@@ -1,1 +1,2054 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHERM RESORT | Restaurant, Bar & Accommodation</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background-color:#F8F4E8;
+    color:#333;
+}
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 20px;
+    z-index:1000;
+}
+
+.left{
+    display:flex;
+    align-items:center;
+}
+
+.menu-toggle{
+    color:#fff;
+    font-size:32px;
+    cursor:pointer;
+    margin-right:15px;
+}
+
+.logo-img{
+    width:70px;
+    height:70px;
+}
+
+.logo{
+    margin-left:10px;
+    color:#d4af37;
+    font-size:34px;
+    font-weight:bold;
+}
+
+.logo span{
+    display:block;
+    color:#fff;
+    letter-spacing:4px;
+    font-size:17px;
+}
+.book-btn{
+    display:inline-block;
+    background:#d4af37;
+    color:#fff;
+    padding:16px 28px;
+    border-radius:6px;
+    font-weight:bold;
+    text-decoration:none;
+    font-size: 18px;
+}
+
+/* MOBILE MENU */
+
+#navMenu{
+    display:none;
+    position:absolute;
+    top:85px;
+    left:0;
+    width:100%;
+    background:#000;
+}
+
+#navMenu.show{
+    display:block;
+}
+
+#navMenu ul{
+    list-style:none;
+}
+
+#navMenu li{
+    border-bottom:1px solid #333;
+}
+
+#navMenu a{
+    display:block;
+    color:#fff;
+    padding:18px;
+    text-align:center;
+}
+
+#navMenu a:hover{
+    background:#d4af37;
+}
+
+/* HERO */
+
+.slider{
+    margin-top:85px;
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:1s;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.45);
+}
+
+.caption{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:#fff;
+    text-align:center;
+    width:90%;
+}
+
+.caption h1{
+    font-size:68px;
+    margin-bottom:20px;
+    text-shadow:3px 3px 10px;
+    font-weight:800;
+    line-height:1.1;
+    rgba(0,0,0,.7);
+}
+
+.caption p{
+    font-size:24px;
+    margin-bottom:30px;
+    line-height: 1.8;
+}
+
+.caption a{
+    display:inline-block;
+    background:#d4af37;
+    color:#fff;
+    padding:18px 40px;
+    border-radius:10px;
+    font-size:20px;
+}
+
+/* BOOKING */
+.booking-section{
+display:flex;
+justify-content:center;
+margin-top:-120px;
+position:relative;
+z-index:20;
+padding:20px;
+}
+
+.booking-box{
+background:#0d4b2f;
+width:95%;
+max-width:700px;
+padding:35px;
+border-radius:18px;
+box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+.booking-box h2{
+text-align:center;
+color:#fff;
+font-size:46px;
+margin-bottom:30px;
+}
+
+.form-group{
+margin-bottom:18px;
+}
+
+.form-group label{
+display:block;
+color:#fff;
+font-weight:bold;
+margin-bottom:8px;
+font-size:20px;
+}
+
+.form-group input,
+.form-group select{
+width:100%;
+padding:18px;
+font-size:19px;
+border:none;
+border-radius:10px;
+background:#fff;
+outline:none;
+}
+
+.booking-box button{
+width:100%;
+padding:16px;
+background:#d4af37;
+color:#fff;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.booking-box button:hover{
+background:#b99222;
+transform:translateY(-2px);
+}
+
+/* ABOUT */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+
+}
+
+.about-video {
+    width: 350px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    align-items:center;
+    margin-left:20px;
+}
+
+.about h2{
+    color:#063b26;
+    font-size:40px;
+    margin-bottom:20px;
+    margin-left:80px;
+}
+
+.about p{
+    line-height:1.8;
+    margin-bottom:25px;
+    margin-left:20px
+}
+
+.about-btn{
+    display:inline-block;
+    background:#d4af37;
+    color:#fff;
+    padding:14px 30px;
+    border-radius:6px;
+    margin-left:30px;
+}
+
+@media(max-width:768px){
+
+.book-btn{
+    padding:10px 15px;
+    font-size:14px;
+}
+
+.caption h1{
+    font-size:38px;
+}
+
+.caption p{
+    font-size:18px;
+}
+
+}
+  /*================ SECTION TITLES ================*/
+
+.section-title{
+    text-align:center;
+    font-size:52px;
+    color:#063b26;
+    margin-bottom:60px;
+    font-weight:bold;
+}
+
+/*================ FACILITIES ================*/
+
+.facilities{
+    padding:80px 8%;
+    background:#F8F4E8;
+}
+
+.facility-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.facility-card{
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.facility-card img,
+.facility-card video{
+    width:100%;
+    height:250px;      /* Increase to make them larger */
+    display:block;
+    object-fit:contain; /* Keeps the whole image visible */
+    background:15px 15px 0 0;
+}
+
+.facility-card h3{
+    padding:18px 20px 10px;
+    color:#063b26;
+    text-align:center;
+}
+
+.facility-card p{
+    padding:0 20px 20px;
+    line-height:1.7;
+    text-align:center;
+}
+/*================ MENU ================*/
+
+.menu-preview{
+    padding:90px 8%;
+    background:#fff;
+    text-align:center;
+}
+
+.menu-preview img{
+    width:100%;
+    max-width:900px;
+    border-radius:10px;
+    margin:25px auto;
+}
+
+.menu-preview p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+/*================ ROOMS ================*/
+
+#rooms{
+    padding:90px 8%;
+    background:#fafafa;
+}
+
+.room-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.room-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.room-card:hover{
+    transform:translateY(-10px);
+}
+
+.room-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.room-content{
+    padding:25px;
+    text-align:center;
+}
+
+.room-content h3{
+    color:#063b26;
+    margin-bottom:15px;
+}
+
+.room-content p{
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.room-content h4{
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+.room-content a{
+    display:inline-block;
+    padding:12px 30px;
+    background:#063b26;
+    color:#fff;
+    border-radius:6px;
+}
+
+.room-content a:hover{
+    background:#d4af37;
+}
+
+/*================ GALLERY ================*/
+
+#gallery{
+    padding:20px 5%;
+    background:#fff;
+    
+}
+
+.gallery{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding-bottom:15px;
+}
+
+.gallery::-webkit-scrollbar{
+    height:8px;
+}
+
+.gallery::-webkit-scrollbar-thumb{
+    background:#d4af37;
+    border-radius:10px;
+}
+
+.gallery img{
+    min-width:300px;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    transition:.3s;
+    cursor:pointer;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+    
+
+/*================ TESTIMONIALS ================*/
+
+#testimonials{
+    padding:90px 8%;
+    background:#063b26;
+}
+
+#testimonials .section-title{
+    color:#fff;
+}
+
+.testimonial-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.testimonial{
+    background:#fff;
+    border-radius:12px;
+    padding:30px;
+    text-align:center;
+    transition:.3s;
+}
+
+.testimonial:hover{
+    transform:translateY(-8px);
+}
+
+.testimonial p{
+    margin:20px 0;
+    line-height:1.8;
+}
+
+.testimonial h3{
+    color:#063b26;
+}
+
+/*================ CONTACT ================*/
+
+#contact{
+    padding:90px 8%;
+    background:#fff;
+}
+
+.contact-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:50px;
+}
+
+.contact-info h3,
+.contact-form h3{
+    color:#063b26;
+    margin-bottom:20px;
+}
+
+.contact-info p{
+    line-height:1.9;
+    margin-bottom:15px;
+}
+
+.social-links{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.social-links a{
+    background:#063b26;
+    color:#fff;
+    padding:12px 18px;
+    border-radius:6px;
+}
+
+.social-links a:hover{
+    background:#d4af37;
+}
+
+.contact-form form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.contact-form button{
+    background:#063b26;
+    color:#fff;
+    padding:15px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.contact-form button:hover{
+    background:#d4af37;
+}
+    
+    .social-icons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin:20px 0;
+}
+
+.social-icons a{
+    width:55px;
+    height:55px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    text-decoration:none;
+    color:#fff;
+    font-size:28px;
+    transition:0.3s;
+}
+
+.social-icons a:nth-child(1){background:#25D366;} /* WhatsApp */
+.social-icons a:nth-child(2){background:#1877F2;} /* Facebook */
+.social-icons a:nth-child(3){
+    background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+} /* Instagram */
+.social-icons a:nth-child(4){background:#000;} /* TikTok */
+
+.social-icons a:hover{
+    transform:scale(1.1);
+}
+    /* ===========================
+   LUXURY ORDER FORM
+   White + Cream + Gold Theme
+=========================== */
+
+.order-section{
+    background: linear-gradient(180deg,#fffdf8,#f8f2e6);
+    padding:70px 20px;
+    text-align:center;
+}
+
+.order-section h2{
+    font-size:42px;
+    color:#111;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+.order-section h2::after{
+    content:"";
+    display:block;
+    width:90px;
+    height:4px;
+    background:#d4af37;
+    margin:15px auto 0;
+    border-radius:20px;
+}
+
+.order-section p{
+    color:#666;
+    font-size:18px;
+    max-width:650px;
+    margin:0 auto 40px;
+    line-height:1.7;
+}
+
+.order-section form{
+    max-width:700px;
+    margin:auto;
+    background:#ffffff;
+    padding:40px 30px;
+    border-radius:22px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.12);
+    border:2px solid #f3e3b2;
+}
+
+.order-section input,
+.order-section textarea,
+.order-section select{
+    width:100%;
+    padding:18px 20px;
+    margin:15px 0;
+    border:2px solid #ece3d2;
+    border-radius:14px;
+    background:#fffdf8;
+    font-size:17px;
+    color:#333;
+    transition:0.3s;
+    outline:none;
+    box-sizing:border-box;
+}
+
+.order-section input:focus,
+.order-section textarea:focus,
+.order-section select:focus{
+    border-color:#d4af37;
+    background:#ffffff;
+    box-shadow:0 0 12px rgba(212,175,55,0.25);
+}
+
+.order-section textarea{
+    min-height:150px;
+    resize:vertical;
+}
+
+.order-section button,
+.order-section input[type="submit"]{
+    width:100%;
+    margin-top:20px;
+    padding:18px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(135deg,#d4af37,#c89b16);
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 8px 20px rgba(212,175,55,0.35);
+}
+
+.order-section button:hover,
+.order-section input[type="submit"]:hover{
+    transform:translateY(-3px);
+    background:linear-gradient(135deg,#e0bb4c,#b8860b);
+    box-shadow:0 12px 28px rgba(212,175,55,0.45);
+}
+
+.order-section ::placeholder{
+    color:#8b8b8b;
+}
+
+@media (max-width:768px){
+
+.order-section{
+    padding:50px 15px;
+}
+
+.order-section h2{
+    font-size:34px;
+}
+
+.order-section p{
+    font-size:17px;
+}
+
+.order-section form{
+    padding:25px 18px;
+}
+
+.order-section input,
+.order-section textarea,
+.order-section select{
+    font-size:16px;
+    padding:16px;
+}
+
+.order-section button,
+.order-section input[type="submit"]{
+    font-size:17px;
+}
+}
+/* Mobile */
+@media(max-width:768px){
+
+.order-section{
+    padding:50px 15px;
+}
+
+.order-section form{
+    padding:25px;
+    border-radius:15px;
+}
+
+.order-section h2{
+    font-size:32px;
+}
+
+.order-section p{
+    font-size:17px;
+}
+}
+
+/*================ MAP ================*/
+
+#map iframe{
+    width:100%;
+    border:0;
+}
+
+/*================ FOOTER ================*/
+
+footer{
+    background:#063b26;
+    color:#fff;
+    padding:60px 8% 25px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:40px;
+    margin-bottom:25px;
+}
+
+.footer-container h3{
+    color:#d4af37;
+    margin-bottom:15px;
+}
+
+.footer-container ul{
+    list-style:none;
+}
+
+.footer-container li{
+    margin-bottom:10px;
+}
+
+.footer-container a{
+    color:#fff;
+}
+
+.footer-container a:hover{
+    color:#d4af37;
+}
+
+footer hr{
+    border:none;
+    border-top:1px solid rgba(255,255,255,.3);
+    margin:20px 0;
+}
+
+.copyright{
+    text-align:center;
+}
+
+/*================ FLOATING WHATSAPP =================*/
+
+.whatsapp-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    text-decoration:none;
+    z-index:999;
+}
+
+/*================ BACK TO TOP =================*/
+
+#topBtn{
+    position:fixed;
+    bottom:95px;
+    right:20px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#d4af37;
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+    display:none;
+}
+
+/*================ RESPONSIVE =================*/
+
+@media(max-width:768px){
+
+.section-title{
+    font-size:32px;
+}
+
+.caption h1{
+    font-size:36px;
+}
+
+.caption p{
+    font-size:18px;
+}
+
+.booking{
+    margin-top:-40px;
+}
+
+.room-card img{
+    height:200px;
+}
+
+.gallery img{
+    height:200px;
+}
+
+.facility-card img,
+.facility-card video{
+    height:auto !important;
+    object-fit:contain !important;
+}
+
+.footer-container,
+.contact-container{
+    text-align:center;
+}
+
+.social-links{
+    justify-content:center;
+}
+
+.book-btn{
+    font-size:14px;
+    padding:10px 15px;
+}
+
+}
+    /* Remove underlines from all links */
+a{
+    text-decoration: none;
+}
+    
+/* Your existing CSS */
+
+/* Paste it here */
+.about-video{
+    width:100%;
+    max-width:500px;
+    margin:auto;
+}
+
+.about-video video{
+    width:100%;
+    border-radius:15px;
+    display:block;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+    .about-card{
+    background:#fff;
+    padding:20px;
+    margin:20px 0;
+    border-left:5px solid #d4af37;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.about-card h3{
+    color:#063b26;
+    margin-bottom:10px;
+}
+
+.about-card p,
+.about-card li{
+    color:#555;
+    line-height:1.8;
+}
+
+.about-card ul{
+    padding-left:20px;
+}
+    .review-section{
+    background:#F8F4E8;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.review-section h2{
+    color:#0d4b2f;
+    margin-bottom:10px;
+    font-size:32px;
+}
+
+.review-section p{
+    color:#555;
+    margin-bottom:30px;
+}.review-form{
+    display:none;
+    margin-top:25px;
+}
+
+.review-btn{
+    background:#d4af37;
+    color:#fff;
+    border:none;
+    padding:15px 35px;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.review-btn:hover{
+    background:#b89324;
+}
+    .footer-toggle{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 18px;
+    background:#d4af37;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.footer-toggle:hover{
+    background:#c79b1f;
+}
+
+#arrow{
+    font-size:18px;
+    transition:0.3s;
+}
+
+.links-content{
+    display:none;
+    margin-top:12px;
+}
+
+.links-content a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 0;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.links-content a:last-child{
+    border-bottom:none;
+}
+
+.links-content.show{
+    display:block;
+}
+    /* ================= MENU PREVIEW ================= */
+
+.menu-preview{
+    background:#F8F4E8;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.menu-header{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.gold-line{
+    width:70px;
+    height:3px;
+    background:#D4AF37;
+}
+
+.section-title{
+    color:#0B5D3B;
+    font-size:38px;
+    margin:0;
+}
+
+.menu-description{
+    max-width:750px;
+    margin:0 auto 40px;
+    color:#555;
+    line-height:1.8;
+    font-size:17px;
+}
+
+/* Cover Image */
+
+.featured-menu{
+    max-width:850px;
+    margin:0 auto 45px;
+}
+
+.featured-menu img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+    transition:.4s;
+}
+
+.featured-menu img:hover{
+    transform:scale(1.02);
+}
+
+/* Gallery */
+
+.
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="left">
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<img src="logo.png" class="logo-img" alt="Logo">
+
+<div class="logo">
+CHERM
+<span>RESORT</span>
+</div>
+
+</div>
+
+<a href="https://wa.me/256776673345" class="book-btn">
+Book Now
+</a>
+
+<nav id="navMenu">
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#rooms">Rooms</a></li>
+
+<li><a href="#facilities">Facilities</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#menu">Menu</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<section class="slider" id="home">
+
+<div class="slide active">
+
+<img src="Fly.jpg" alt="Cherm Resort">
+
+<div class="overlay"></div>
+
+<div class="caption">
+
+<h1>Welcome To Cherm Resort</h1>
+    <p>"where comfort meets nature"</p>
+
+<p>Luxury Accommodation • Restaurant • Bar • Gardens</p>
+
+<a href="https://wa.me/256776673345">
+Book on WhatsApp
+</a>
+
+</div>
+
+</div>
+
+<div class="slide">
+
+<img src="Rooms.jpg" loading="lazy" alt="Luxury Rooms">
+
+<div class="overlay"></div>
+
+<div class="caption">
+
+<h1>Luxury Rooms</h1>
+
+<p>Elegant rooms designed for comfort and relaxation.</p>
+
+<a href="#rooms">View Rooms</a>
+
+</div>
+
+</div>
+
+<div class="slide">
+
+<img src="garden.jpg" alt="Restaurant">
+
+<div class="overlay"></div>
+
+<div class="caption">
+
+<h1>Restaurant & Gardens</h1>
+
+<p>Enjoy delicious meals in a beautiful environment.</p>
+
+<a href="#gallery">Explore</a>
+
+</div>
+
+</div>
+
+</section>
+<section class="booking-section">
+
+<div class="booking-box">
+
+<h2>Book Your Stay</h2>
+
+<form>
+
+<div class="form-group">
+<label>Check-in</label>
+<input type="date" id="checkin" required>
+</div>
+
+<div class="form-group">
+<label>Check-out</label>
+<input type="date" id="checkout" required>
+</div>
+
+<div class="form-group">
+<label>Guests</label>
+<select id="guests">
+<option>1 Guest</option>
+<option>2 Guests</option>
+<option>3 Guests</option>
+<option>4 Guests</option>
+<option>5+ Guests</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Room Type</label>
+<select id="room">
+<option>Standard Room</option>
+<option>Deluxe Room</option>
+<option>Executive Room</option>
+<option>Family Suite</option>
+</select>
+</div>
+
+<button type="button" onclick="checkAvailability()">
+CHECK AVAILABILITY
+</button>
+
+</form>
+
+</div>
+
+</section>
+<section class="about" id="about">
+ <div>
+   <h2>About Us</h2>
+
+        <p>
+    Welcome to <strong>CHERM Resort </strong>, a premier hospitality destination located in Nkoowe, 24.1km along the Kampala–Hoima Highway. We proudly serve both local and travelling guests by providing quality accommodation, exceptional dining experiences and outstanding customer service in a peaceful and welcoming environment.
+</p>
+
+<p>
+    At CHERM Resort, we understand that every guest expects comfort, delicious cuisine and memorable hospitality. Our restaurant offers a wide variety of local and continental meals prepared to the highest standards, while our accommodation, bar, gardens, sauna and steam bath facilities provide the perfect setting for relaxation, business and special occasions.
+</p>
+
+<p>
+    Whether you are visiting for leisure, business meetings, family gatherings or celebrations, our dedicated team is committed to delivering excellent service, quality hospitality and an unforgettable experience for every guest.
+</p>
+
+<!-- Hidden text -->
+<div id="moreAbout" style="display:none;">
+
+    <div class="about-card">
+        <h3>Our Vision</h3>
+        <p>
+            To build a high-performing empire where diversity and
+            inclusion are critical factors in service deliverly and 
+            customer satisfaction.
+        </p>
+    </div>
+
+    <div class="about-card">
+        <h3>Our Mission</h3>
+        <p>
+            To be the leading resort where customers can find and
+            discover hybrid products at affordable prices.
+            
+        </p>
+    </div>
+
+    <div class="about-card">
+        <h3>Core Values</h3>
+        <ul>
+            <li>providing great service</li>
+            <li>providing great food at a good price</li>
+            <li>A comfortable, attractive, and clean environment so that customers have a pleasant dining experience</li>
+            <li>Constantly striving to improve and keeping up with trends</li>
+            <li>Integrity</li>
+            <li>Continuous training and development of every employee</li>
+            <li>Teamwork and Team Cohesion</li>
+            <li>Excellence</li>
+            <li>Growth</li>
+            <li>Professionalism</li>
+            <li>Job rotations</li>
+        </ul>
+    </div>
+
+    <div class="about-card">
+        <h3>Strategic Objectives</h3>
+        <ul>
+            <li>Continuous training and development of staff.</li>
+            <li>Product and service innovation.</li>
+            <li>Benchmarking with leading players in the industry.</li>
+            <li>Embracing modern and up-to-date technology.</li>
+        </ul>
+    </div>
+ 
+
+</div>
+        <button type="button" class="about-btn" id="readBtn" onclick="toggleAbout()">
+            Read More
+        </button>
+
+        <a href="#rooms" class="about-btn">Explore Rooms</a>
+
+    </div>
+
+</section>
+  <!-- ================= FACILITIES ================= -->
+
+<section id="facilities" class="facilities">
+
+<h2 class="section-title">Our Facilities</h2>
+
+<div class="facility-container">
+
+<div class="facility-card">
+    
+<img src="Re.jpg" alt="Restaurant">
+<h3>Restaurant</h3>
+<p>
+Enjoy delicious local and international meals prepared by our experienced chefs in a comfortable dining environment.
+</p>
+</div>
+
+<div class="facility-card">
+<video autoplay muted loop playsinline controls>
+<source src="Cj.mp4" type="video/mp4">
+</video>
+<h3>Bar & Lounge</h3>
+<p>
+Relax with cocktails, wines, beers, spirits and soft drinks in our modern bar and lounge.
+</p>
+</div>
+
+<div class="facility-card">
+<img src="Se.jpg" alt="Sauna">
+<h3>Sauna & Steam</h3>
+<p>
+Refresh your body and mind with our premium sauna and steam bath facilities.
+</p>
+</div>
+
+<div class="facility-card">
+  <video controls autoplay muted loop playsinline>
+        <source src="Vcl.mp4" type="video/mp4">
+        
+    </video>
+</div>
+<h3>Beautiful Gardens</h3>
+<p>
+Perfect gardens for weddings, meetings, parties and outdoor relaxation.
+</p>
+</div>
+
+</div>
+
+</section>
+    <!-- ================= MENU ================= -->
+
+<section class="menu-preview" id="menu">
+
+    <div class="menu-header">
+        <div class="gold-line"></div>
+        <h2 class="section-title">Our Menu</h2>
+        <div class="gold-line"></div>
+    </div>
+
+    <p class="menu-description">
+        Enjoy our carefully prepared local and international dishes,
+        refreshing drinks, cocktails, and delicious snacks made with
+        fresh ingredients.
+    </p>
+
+    <!-- Featured Menu Image -->
+    <div class="featured-menu">
+        <img src="Tm.jpg" alt="Cherm Resort Menu">
+    </div>
+
+    <button id="menuBtn" class="about-btn" onclick="toggleFullMenu()">
+        View Full Menu →
+    </button>
+
+    <!-- Hidden Menu -->
+    <div id="fullMenu" style="display:none; margin-top:35px;">
+
+        <img src="K.jpg" alt="Menu Page 1" style="width:100%;max-width:850px;border-radius:15px;margin-bottom:20px;">
+
+        <img src="L.jpg" alt="Menu Page 2" style="width:100%;max-width:850px;border-radius:15px;margin-bottom:20px;">
+
+        <img src="H.jpg" alt="Menu Page 3" style="width:100%;max-width:850px;border-radius:15px;margin-bottom:20px;">
+
+        <img src="Z.jpg" alt="Menu Page 4" style="width:100%;max-width:850px;border-radius:15px;margin-bottom:20px;">
+ <img src="R.jpg" alt="Menu Page 4" style="width:100%;max-width:850px;border-radius:15px;margin-bottom:20px;">
+
+        <img src="B.jpg" alt="Menu Page 5" style="width:100%;max-width:850px;border-radius:15px;">
+    </div>
+
+</section>
+
+<!-- ================= ROOMS ================= -->
+
+<section id="rooms">
+
+<h2 class="section-title">Luxury Accommodation</h2>
+
+<div class="room-container">
+
+<div class="room-card">
+
+<img src="Rooms.jpg" alt="Standard Room">
+
+<div class="room-content">
+
+<h3>Standard Room</h3>
+
+<p>
+Comfortable room with television, Wi-Fi, hot shower and breakfast.
+</p>
+
+<h4>UGX 42,000 / Night</h4>
+
+<a href="https://wa.me/256776673345">
+Book Now
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="room-card">
+
+<img src="executive.jpg" alt="Executive Suite">
+
+<div class="room-content">
+
+<h3>Executive Suite</h3>
+
+<p>
+Premium suite with sitting room, balcony and excellent garden views.
+</p>
+
+<h4>UGX 100,000/ Night</h4>
+
+<a href="https://wa.me/256776673345">
+Book Now
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+<h2 class="section-title">Gallery</h2>
+
+<div class="gallery">
+
+<img src="Fly.jpg" alt="Cherm Resort">
+<img src="Rooms.jpg" alt="Luxury Rooms">
+<img src="garden.jpg" alt="Gardens">
+<img src="Cm.jpg" alt="Restaurant">
+<img src="Cl.jpg" alt="Bar">
+<img src="Rest.jpg" alt="Steam Bath">
+<img src="sauna.jpg" alt="Sauna">
+    <img src="Bar.jpg" alt="Bar">
+        <img src="Pk.jpg" alt="Bar">
+        <img src="Tr.jpeg" alt="Bar">
+    <img src="Re.jpg" alt="Bar">
+    
+</div>
+
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section id="testimonials">
+
+<h2 class="section-title">What Our Guests Say</h2>
+
+<div class="testimonial-container">
+
+<div class="testimonial">
+
+★★★★★
+
+<p>
+"The rooms were clean, the food was delicious and the staff were very welcoming."
+</p>
+
+<h3>Sarah K.</h3>
+
+</div>
+
+<div class="testimonial">
+
+★★★★★
+
+<p>
+"A peaceful place to relax with beautiful gardens and excellent customer service."
+</p>
+
+<h3>David M.</h3>
+
+</div>
+
+<div class="testimonial">
+
+★★★★★
+
+<p>
+"I highly recommend Cherm Resort for accommodation, conferences and family outings."
+</p>
+
+<h3>Grace N.</h3>
+
+</div>
+
+</div>
+
+</section>
+ 
+    
+  <!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact">
+
+<h2 class="section-title">Contact Us</h2>
+
+<div class="contact-container">
+
+<div class="contact-info">
+
+<h3>Cherm Resort</h3>
+
+<p><strong>Location:</strong> Nkoowe, Wakiso District, Uganda</p>
+
+<p><strong>Phone:</strong>+256776673345</p>
+
+<p><strong>Email:</strong>resortcherm@gmail.com</p>
+
+<p>
+We are open every day to provide quality accommodation,
+restaurant services, conferences, gardens and relaxation.
+</p>
+<div class="social-links">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<div class="social-icons">
+    <a href="https://wa.me/256776673345" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="https://facebook.com/@ChermResortHotel" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="https://instagram.com/@ChermResortHotel" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://tiktok.com/@ChermResortHotel" target="_blank">
+        <i class="fab fa-tiktok"></i>
+    </a>
+    
+    <a href="https://youtube.com/@ChermResortHotel" target="_blank">
+        <i class="fab fa-youtube"></i>
+    </a>
+</div>
+</div>
+</div>
+</div>
+<div class="contact-form">
+
+<!-- ================= ORDER BY EMAIL ================= -->
+
+<section id="order" class="order-section">
+<!-- ================= ORDER BY EMAIL ================= -->
+
+<section id="order" class="order-section">
+
+    <h2>Order by Email</h2>
+
+    <p>Fill in the form below and our team will contact you shortly.</p>
+
+    <form id="orderForm" action="https://formsubmit.co/ajax/resortcherm@gmail.com" method="POST">
+
+        <input type="hidden" name="_subject" value="New Order from CHERM Resort Website">
+        <input type="hidden" name="_captcha" value="false">
+
+        <input type="text" name="Full Name" placeholder="👤 Full Name" required>
+
+        <input type="email" name="Email" placeholder="📧 Email Address" required>
+
+        <input type="tel" name="Phone" placeholder="📱 Phone Number" required>
+
+        <select name="Service Required" required>
+            <option value="">Choose a Service</option>
+            <option>Restaurant Order</option>
+            <option>Room Booking</option>
+            <option>Conference Booking</option>
+            <option>Gardens Booking</option>
+            <option>Sauna & Steam Bath</option>
+            <option>General Inquiry</option>
+        </select>
+
+        <textarea name="Message" rows="5" placeholder="📝 Describe your request..." required></textarea>
+
+        <button type="submit">📩 Send Request</button>
+
+    </form>
+
+    <!-- Success Message -->
+    <div id="successMessage" style="
+        display:none;
+        margin-top:25px;
+        background:#28a745;
+        color:#fff;
+        padding:18px;
+        border-radius:10px;
+        font-size:18px;
+        font-weight:bold;
+        text-align:center;">
+        ✅ Thank you! Your request has been received successfully. Our team will contact you shortly.
+    </div>
+
+    <!-- Error Message -->
+    <div id="errorMessage" style="
+        display:none;
+        margin-top:25px;
+        background:#dc3545;
+        color:#fff;
+        padding:18px;
+        border-radius:10px;
+        font-size:18px;
+        text-align:center;">
+        ❌ Sorry! Your request could not be sent. Please try again.
+    </div>
+
+</section>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="review-section" id="reviews">
+
+    <h2>Customer Reviews</h2>
+
+    <p>
+        We'd love to hear about your experience at Cherm Resort.
+    </p>
+
+    <button id="reviewBtn" class="review-btn">
+        Make a Review
+    </button>
+
+    <form id="reviewForm"
+          action="https://formsubmit.co/ajax/resortcherm@gmail.com"
+          method="POST"
+          class="review-form">
+
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Customer Review">
+
+        <input
+            type="text"
+            name="Name"
+            placeholder="Your Name"
+            required>
+
+        <input
+            type="email"
+            name="Email"
+            placeholder="Your Email"
+            required>
+
+        <select name="Rating" required>
+            <option value="">Select Rating</option>
+            <option>⭐⭐⭐⭐⭐ Excellent</option>
+            <option>⭐⭐⭐⭐ Very Good</option>
+            <option>⭐⭐⭐ Good</option>
+            <option>⭐⭐ Fair</option>
+            <option>⭐ Poor</option>
+        </select>
+
+        <textarea
+            name="Review"
+            placeholder="Write your review..."
+            rows="5"
+            required></textarea>
+
+        <button type="submit">
+            Submit Review
+        </button>
+
+    </form>
+
+    <div id="reviewSuccess"
+         style="display:none;background:#28a745;color:#fff;padding:15px;margin-top:20px;border-radius:8px;font-weight:bold;">
+        ✅ Thank you! Your review has been received.
+    </div>
+
+</section>
+<!-- ================= GOOGLE MAP ================= -->
+
+<section id="map">
+
+<iframe
+src="https://www.google.com/maps?q=Nkoowe,Wakiso,Uganda&output=embed"
+width="100%"
+height="450"
+style="border:0;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+
+<h3>Cherm Resort</h3>
+
+<p>
+Luxury Accommodation, Restaurant,
+Bar, Gardens, Sauna & Steam Bath.
+</p>
+
+</div>
+
+<div class="footer-links">
+
+    <button class="footer-toggle" onclick="toggleLinks()">
+        <span>Quick Links</span>
+        <span id="arrow">▼</span>
+    </button>
+
+    <div id="quickLinks" class="links-content">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a href="#reviews">reviews</a>
+    </div>
+
+</div>
+
+<h3>Opening Hours</h3>
+
+<p>Monday - Sunday</p>
+
+<p>Open 24 Hours</p>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="copyright">
+© 2026 Cherm Resort. All Rights Reserved.
+</p>
+
+</footer>
+
+<!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+
+<a href="https://wa.me/256776673345"
+class="whatsapp-btn"
+target="_blank">
+💬
+</a>
+
+<!-- ================= BACK TO TOP ================= -->
+
+<button id="topBtn" onclick="topFunction()">
+↑
+</button>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+// IMAGE SLIDER
+
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+function showSlides(){
+
+slides[currentSlide].classList.remove("active");
+
+currentSlide++;
+
+if(currentSlide >= slides.length){
+currentSlide = 0;
+}
+
+slides[currentSlide].classList.add("active");
+
+}
+
+setInterval(showSlides,4000);
+
+
+// HAMBURGER MENU
+
+function toggleMenu(){
+
+document.getElementById("navMenu").classList.toggle("show");
+
+}
+
+
+// CLOSE MENU AFTER CLICKING A LINK
+
+document.querySelectorAll("#navMenu a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+document.getElementById("navMenu").classList.remove("show");
+
+});
+
+});
+
+
+// BACK TO TOP BUTTON
+
+const topBtn=document.getElementById("topBtn");
+
+window.onscroll=function(){
+
+if(document.body.scrollTop>300 || document.documentElement.scrollTop>300){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+};
+
+function topFunction(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+</script>
+    <script>
+function checkAvailability() {
+    const checkin = document.getElementById("checkin").value;
+    const checkout = document.getElementById("checkout").value;
+    const guests = document.getElementById("guests").value;
+    const room = document.getElementById("room").value;
+
+    if (!checkin || !checkout || !guests) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    const message =
+`Hello Cherm Resort,
+
+I would like to check room availability.
+
+📅 Check-in: ${checkin}
+📅 Check-out: ${checkout}
+👤 Guests: ${guests}
+🏨 Room Type: ${room}
+
+Please let me know if a room is available. Thank you.`;
+
+    const phone = "256776673345"; // Replace with the resort's WhatsApp number
+
+    const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+</script>
+ <script>
+function toggleAbout() {
+    var more = document.getElementById("moreAbout");
+    var btn = document.getElementById("readBtn");
+
+    if (more.style.display === "none" || more.style.display === "") {
+        more.style.display = "block";
+        btn.innerHTML = "Read Less";
+    } else {
+        more.style.display = "none";
+        btn.innerHTML = "Read More";
+    }
+}
+</script>
+    
+ <script>
+function toggleAbout() {
+    var more = document.getElementById("moreAbout");
+    var btn = document.getElementById("readBtn");
+
+    if (more.style.display === "none" || more.style.display === "") {
+        more.style.display = "block";
+        btn.innerHTML = "Show Less";
+    } else {
+        more.style.display = "none";
+        btn.innerHTML = "Read More";
+    }
+}
+</script>
+    <script>
+const btn = document.getElementById("reviewBtn");
+const form = document.getElementById("reviewForm");
+
+btn.onclick = function () {
+    if (form.style.display === "none" || form.style.display === "") {
+        form.style.display = "block";
+        btn.textContent = "Hide Review Form";
+    } else {
+        form.style.display = "none";
+        btn.textContent = "Make a Review";
+    }
+};
+</script>
+    <script>
+    function toggleLinks() {
+    const links = document.getElementById("quickLinks");
+    const arrow = document.getElementById("arrow");
+
+    links.classList.toggle("show");
+
+    if (links.classList.contains("show")) {
+        arrow.innerHTML = "▲";
+    } else {
+        arrow.innerHTML = "▼";
+    }
+}
+    </script> 
+<script>
+function toggleFullMenu() {
+    const menu = document.getElementById("fullMenu");
+    const btn = document.getElementById("menuBtn");
+
+    if (menu.style.display === "none" || menu.style.display === "") {
+        menu.style.display = "block";
+        btn.innerHTML = "Hide Full Menu ↑";
+    } else {
+        menu.style.display = "none";
+        btn.innerHTML = "View Full Menu →";
+    }
+}</script>
+    
+<script>
+const orderForm = document.getElementById("orderForm");
+const successMessage = document.getElementById("successMessage");
+const errorMessage = document.getElementById("errorMessage");
+
+orderForm.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    successMessage.style.display = "none";
+    errorMessage.style.display = "none";
+
+    const formData = new FormData(orderForm);
+
+    try {
+        const response = await fetch(orderForm.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+
+        if (response.ok) {
+            orderForm.reset();
+            successMessage.style.display = "block";
+
+            successMessage.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        } else {
+            errorMessage.style.display = "block";
+        }
+    } catch (error) {
+        errorMessage.style.display = "block";
+    }
+});
+</script>
+        <script>
+    
+const reviewForm = document.getElementById("reviewForm");
+const reviewSuccess = document.getElementById("reviewSuccess");
+
+reviewForm.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(reviewForm);
+
+    const response = await fetch(reviewForm.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+            "Accept": "application/json"
+        }
+    });
+
+    if (response.ok) {
+        reviewForm.reset();
+        reviewSuccess.style.display = "block";
+
+        setTimeout(() => {
+            reviewSuccess.style.display = "none";
+        }, 5000);
+    } else {
+        alert("Failed to send review.");
+    }
+});
+    </script >
+</body>
+
+</html>
